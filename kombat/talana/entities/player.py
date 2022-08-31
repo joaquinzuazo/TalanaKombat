@@ -1,8 +1,8 @@
 class Player():
-    def __init__(self, name, special_shots, life, movements, hits):
+    def __init__(self, name, special_shots, health, movements, hits):
         self.name = name
         self.special_shots = special_shots
-        self.life = life
+        self.health = health
         self.movements = movements
         self.hits = hits
     
@@ -21,10 +21,35 @@ class Player():
     def get_combination(self, index):
         return f'{self.movements[index]}+{self.hits[index]}'
 
+    def spear_attack(self, index):
+        try:
+            hit = self.get_combination(index)
+            hits = self.get_special_shots()
+            print(hit)
+            print(self.name)
+
+            for h in hits:
+                movement = ''
+                if hit.find(h) == 0:
+                    movement = f'{self.name} lanza un {hits[hit]["text"]}'
+                    return {"movement":movement, 'damage':hits[h]['damage']}
+                elif hit.find(h) > 0:
+                    movement = f'{self.name} se mueve y lanza un {hits[h]["text"]}'
+                    return {"movement":movement, 'damage':hits[h]['damage']}
+                else:
+                    if h:
+                        movement = f'{self.name} se mueve' 
+                    else:
+                        continue
+                    
+            return {"movement":movement, 'damage':0}
+        except:
+            return {'damage':0}
+
     def received_attack(self, damage: int):
-        self.life -= damage
+        self.health -= damage
 
     def is_alive(self):
-        if self.life > 0:
+        if self.health > 0:
             return True
         return False

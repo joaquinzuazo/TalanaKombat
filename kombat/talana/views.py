@@ -7,8 +7,8 @@ from talana.process.fight import fight
 def combat(request):
     movements_and_hits_player1 = request.data.get("player1")
     movements_and_hits_player2 = request.data.get("player2")
-    fight(movements_and_hits_player1, movements_and_hits_player2)
-    return Response(status=status.HTTP_200_OK)
+    response = fight(movements_and_hits_player1, movements_and_hits_player2)
+    return Response(response, status=status.HTTP_200_OK)
     # else:
     #     return Response(status=status.HTTP_400_BAD_REQUEST)
 
