@@ -1,4 +1,4 @@
-datos_fijos = {
+constant_player_data = {
     'player1':{
         'name':'Tonyn',
         'special':{
