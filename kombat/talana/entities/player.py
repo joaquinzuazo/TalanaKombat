@@ -31,10 +31,10 @@ class Player():
             for h in hits:
                 movement = ''
                 if hit.find(h) == 0:
-                    movement = f'{self.name} lanza un {hits[hit]["text"]}'
+                    movement = f'{self.name} lanza {hits[hit]["text"]}'
                     return {"movement":movement, 'damage':hits[h]['damage']}
                 elif hit.find(h) > 0:
-                    movement = f'{self.name} se mueve y lanza un {hits[h]["text"]}'
+                    movement = f'{self.name} se mueve y lanza {hits[h]["text"]}'
                     return {"movement":movement, 'damage':hits[h]['damage']}
                 else:
                     if h:

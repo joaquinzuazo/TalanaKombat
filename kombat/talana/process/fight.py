@@ -23,20 +23,20 @@ def fight(movements_and_hits_player1, movements_and_hits_player2):
     if player1 and player2:
         first, second = start_play(player1, player2)
         game_rounds = max(first.get_len_movements(), second.get_len_movements())
-        response = []
+        response = {'combat':[]}
 
         for r in range(game_rounds):
             first_mov = first.spear_attack(r)
             if 'movement' in first_mov:
-                response.append(first_mov['movement'])
+                response['combat'].append(first_mov['movement'])
             second.received_attack(first_mov['damage'])
             if not second.is_alive():
-                response.append(f"{first.name} gana la pelea y aun le queda {first.health} de energia")
+                response['combat'].append(f"{first.name} gana la pelea y aun le queda {first.health} de energia")
                 return response
             second_mov = second.spear_attack(r)
             if 'movement' in second_mov:
-                response.append(second_mov['movement'])
+                response['combat'].append(second_mov['movement'])
             first.received_attack(second_mov['damage'])
             if not first.is_alive():
-                response.append(f"{second.name} gana la pelea y aun le queda {second.health} de energia")
+                response['combat'].append(f"{second.name} gana la pelea y aun le queda {second.health} de energia")
                 return response
