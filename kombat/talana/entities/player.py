@@ -25,8 +25,6 @@ class Player():
         try:
             hit = self.get_combination(index)
             hits = self.get_special_shots()
-            print(hit)
-            print(self.name)
 
             for h in hits:
                 movement = ''

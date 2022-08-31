@@ -31,12 +31,12 @@ def fight(movements_and_hits_player1, movements_and_hits_player2):
                 response['combat'].append(first_mov['movement'])
             second.received_attack(first_mov['damage'])
             if not second.is_alive():
-                response['combat'].append(f"{first.name} gana la pelea y aun le queda {first.health} de energia")
+                response['combat'].append(f"{first.name} gana la pelea y aun le queda {first.health} puntos de salud")
                 return response
             second_mov = second.spear_attack(r)
             if 'movement' in second_mov:
                 response['combat'].append(second_mov['movement'])
             first.received_attack(second_mov['damage'])
             if not first.is_alive():
-                response['combat'].append(f"{second.name} gana la pelea y aun le queda {second.health} de energia")
+                response['combat'].append(f"{second.name} gana la pelea y aun le queda {second.health} puntos de salud")
                 return response
