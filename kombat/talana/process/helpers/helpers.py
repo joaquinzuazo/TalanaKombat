@@ -8,8 +8,9 @@ def start_play(player1, player2):
 
     start_p1 = (player1, player2)
     start_p2 = (player2, player1)
-    
+
     start = start_p1 if sum_buttons_p1 < sum_buttons_p2 else start_p2
+
     if sum_buttons_p1 == sum_buttons_p2:
         start = start_p1 if movements_p1 < movements_p2 else start_p2
         if movements_p1 == movements_p2:
