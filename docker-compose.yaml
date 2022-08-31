@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     build: .
-    command: python /kombat/manage.py migrate --noinput
-    command: python /kombat/manage.py runserver 0.0.0.0:8000
+    command: python kombat/manage.py migrate --noinput
+    command: python kombat/manage.py runserver 0.0.0.0:8000
     ports: 
       - "8000:8000"

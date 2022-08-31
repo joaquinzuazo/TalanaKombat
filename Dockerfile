@@ -5,4 +5,4 @@ WORKDIR /kombat
 COPY . .
 COPY ./requirements.txt /kombat/requirements.txt
 RUN python -m pip install --upgrade pip
-RUN pip install -r /requirements.txt
+RUN pip install -r /kombat/requirements.txt
