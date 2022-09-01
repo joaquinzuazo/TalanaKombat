@@ -2,6 +2,8 @@ version: '3'
 
 services:
   web:
+    environment:
+      - SECRET_KEY=django-insecure-i0qc%e9eqb62o-#)l2nnyk-wk0b4zzos(y$ds-0ci4^zj4c3@t
     build: .
     command: python kombat/manage.py migrate --noinput
     command: python kombat/manage.py runserver 0.0.0.0:8000
