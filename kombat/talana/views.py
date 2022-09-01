@@ -5,7 +5,7 @@ from talana.process.fight import fight
 from talana.process.helpers.helpers import validation_data
 
 
-@api_view(["GET"])
+@api_view(["POST"])
 def combat(request):
     if validation_data(request.data):
         movements_and_hits_player1 = request.data.get("player1")

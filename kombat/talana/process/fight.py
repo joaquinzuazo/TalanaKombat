@@ -44,3 +44,19 @@ def fight(movements_and_hits_player1, movements_and_hits_player2):
                     f"{second.name} gana la pelea y aun le queda {second.health} puntos de salud"
                 )
                 return response
+        else:
+            if first.health > second.health:
+                response["combat"].append(
+                    f"Terminaron las rondas y {first.name} gana la pelea y aun le queda {first.health} puntos de salud"
+                )
+                return response
+            elif first.health < second.health:
+                response["combat"].append(
+                    f"Terminaron las rondas y {second.name} gana la pelea y aun le queda {second.health} puntos de salud"
+                )
+                return response
+            else:
+                response["combat"].append(
+                    f"Terminaron las rondas y hay un empate, al finalizar las rondas ambos tienen {second.health} puntos de salud"
+                )
+                return response
