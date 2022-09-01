@@ -29,7 +29,8 @@ The API is developed in with the following dependencies:
 
 How can I install and use it? I recommend downloading and installing the desktop version for its simplicity
 [Docker desktop](https://www.docker.com/products/docker-desktop/).
-In Postman's case, [Postman](https://www.postman.com/).
+Once downloaded and installed, you need to open it and initialize the docker service on your computer
+You will also need some program to make a request, I recommend: [Postman](https://www.postman.com/).
 
 
 ## How to run this project?
