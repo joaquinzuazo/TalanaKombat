@@ -18,3 +18,24 @@ def start_play(player1, player2):
             if hits_p1 == hits_p2:
                 start = start_p1
     return start
+
+
+def validation_data(payload):
+    validation = True
+    movements_and_hits_player1 = payload.get("player1")
+    movements_and_hits_player2 = payload.get("player2")
+    if movements_and_hits_player1 and movements_and_hits_player2:
+        for data in payload:
+            if "movimientos" in payload[data] and "golpes" in payload[data]:
+                if (
+                    len(payload[data]["movimientos"]) > 0
+                    and len(payload[data]["golpes"]) > 0
+                ):
+                    continue
+                else:
+                    validation = False
+            else:
+                validation = False
+    else:
+        validation = False
+    return validation
